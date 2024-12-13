@@ -1,0 +1,68 @@
+body {
+  background-color: #B2B2B2;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  animation: bg-animation .2s infinite;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+@keyframes bg-animation {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -5%); }
+  20% { transform: translate(-10%, 5%); }
+  30% { transform: translate(5%, -10%); }
+  40% { transform: translate(-5%, 15%); }
+  50% { transform: translate(-10%, 5%); }
+  60% { transform: translate(15%, 0); }
+  70% { transform: translate(0, 10%); }
+  80% { transform: translate(-15%, 0); }
+  90% { transform: translate(10%, 5%); }
+  100% { transform: translate(5%, 0); }
+}
+
+.MainContainer {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  // border: 1px solid #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Nav {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Nav a {
+  text-decoration: none; /* Hilangkan garis bawah */
+  color: #fff; /* Warna teks */
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.Nav a:hover {
+  color: #ddd; /* Warna saat hover */
+}
+
+
