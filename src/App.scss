@@ -1,9 +1,9 @@
 body {
   background-color: #B2B2B2;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Helvetica', sans-serif;
 }
 
 .bg {
@@ -47,7 +47,19 @@ body {
   justify-content: space-between;
 }
 
+.myname {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 4rem;
+  user-select: none;
+}
+
 .Nav {
+  position: fixed; /* Agar tetap di atas */
+  top: 0; /* Posisi tetap di atas */
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  z-index: 10; /* Agar navbar tidak tertutup oleh konten */
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -56,13 +68,110 @@ body {
 
 .Nav a {
   text-decoration: none; /* Hilangkan garis bawah */
-  color: #fff; /* Warna teks */
+  color: black;
   font-size: 1.2rem;
   transition: color 0.2s;
+  font-family: "Old Standard TT", serif;
+}
+
+.Nav span {
+  padding: 5px; /* Tambahkan padding untuk meningkatkan area klik teks */
+  display: inline-block;
+}
+
+.Nav a {
+  pointer-events: none; /* Menonaktifkan klik pada <a> secara default */
+}
+
+.Nav span {
+  pointer-events: all; /* Mengaktifkan klik pada teks di dalamnya */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.aboutme {
+  width: 200px;
+  font-family: "Libre Caslon Text", serif;
+  user-select: none;
 }
 
 .Nav a:hover {
-  color: #ddd; /* Warna saat hover */
+  color: #666; /* Warna saat hover */
+}
+
+.works-container {
+  margin-top: 10px;
+  max-width: 100%;
+  overflow-y: scroll;
+  overflow: hidden;
+  padding-right: 17px;
+}
+
+.works-container::-webkit-scrollbar {
+  display: none;
+}
+
+.work-item {
+  font-size: 1.2rem;
+}
+
+.project-link {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #666;
+}
+
+.project-combined {
+  display: inline;
+}
+
+.project-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: inherit;
+  font-family: "Old Standard TT", serif;
+}
+
+.project-meta {
+  font-size: 1rem;
+  color: inherit;
 }
 
 
+
+.contacts-container {
+  display: flex; /* Memastikan tata letak fleksibel */
+  flex-direction: column; /* Elemen ditata vertikal */
+  gap: 10px; /* Jarak antar elemen */
+}
+
+.contacts-container div a {
+  color: black; /* Warna teks hitam */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  font-size: 16px; /* Ukuran font bisa disesuaikan */
+  transition: color 0.3s ease; /* Animasi hover */
+  font-family: "Old Standard TT", serif;
+}
+
+.contacts-container div a:hover {
+  color: #666; /* Warna teks saat di-hover (opsional) */
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .Nav a {
+    font-size: 1rem;
+  }
+}
