@@ -39,15 +39,38 @@ function App() {
     <div className="MainContainer">
       <div className="Nav">
         <div className="myname">Ishvara Pranidhana Lakshmana</div>
-        <a href="#" onClick={(e) => { e.preventDefault(); handleMenuClick("home"); }}>
+        <a 
+          href="#home"
+          onClick={(e) => { 
+            e.preventDefault(); 
+            handleMenuClick("home"); 
+          }} 
+          className="navLink"
+        >
           <span>Home</span>
         </a>
-        <a href="#" onClick={(e) => { e.preventDefault(); handleMenuClick("works"); }}>
+
+        <a 
+          href="#works"
+          onClick={(e) => { 
+            e.preventDefault(); 
+            handleMenuClick("works"); 
+          }} 
+          className="navLink"
+        >
           <span>Works</span>
         </a>
-        <a href="#" onClick={(e) => { e.preventDefault(); handleMenuClick("contacts"); }}>
+
+        <a 
+          href="#contacts"
+          onClick={(e) => { 
+            e.preventDefault(); 
+            handleMenuClick("contacts"); 
+          }} 
+          className="navLink"
+        >
           <span>Contacts</span>
-        </a>
+      </a>
       </div>
       <div className="content">{renderContent()}</div>
     </div>
