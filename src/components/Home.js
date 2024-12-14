@@ -3,8 +3,7 @@ import React from "react";
 const Home = () => (
   <div className="aboutme">
     <p>
-      Hi, I'm Ishvara. A passionate developer specializing in web and mobile app
-      development. Explore my works and feel free to connect with me.
+      Undergraduate Computer Science student with a strong interest in Web Development, actively seeking for any opportunities to contribute meaningfully while expanding and honing my expertise in the field.
     </p>
   </div>
 );

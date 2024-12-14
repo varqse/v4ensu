@@ -54,12 +54,12 @@ body {
 }
 
 .Nav {
-  position: fixed; /* Agar tetap di atas */
-  top: 0; /* Posisi tetap di atas */
+  position: fixed; 
+  top: 0;
   left: 0;
   right: 0;
   padding: 10px 20px;
-  z-index: 10; /* Agar navbar tidak tertutup oleh konten */
+  z-index: 10;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -67,24 +67,34 @@ body {
 }
 
 .Nav a {
-  text-decoration: none; /* Hilangkan garis bawah */
+  text-decoration: none;
   color: black;
   font-size: 1.2rem;
   transition: color 0.2s;
   font-family: "Old Standard TT", serif;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.Nav a:active {
+  background-color: transparent;
+}
+
+.Nav a:focus {
+  outline: none;
 }
 
 .Nav span {
-  padding: 5px; /* Tambahkan padding untuk meningkatkan area klik teks */
+  padding: 5px;
   display: inline-block;
 }
 
 .Nav a {
-  pointer-events: none; /* Menonaktifkan klik pada <a> secara default */
+  pointer-events: none;
 }
 
 .Nav span {
-  pointer-events: all; /* Mengaktifkan klik pada teks di dalamnya */
+  pointer-events: all;
 }
 
 .content {
@@ -103,7 +113,7 @@ body {
 }
 
 .Nav a:hover {
-  color: #666; /* Warna saat hover */
+  color: #666;
 }
 
 .works-container {
@@ -112,6 +122,8 @@ body {
   overflow-y: scroll;
   overflow: hidden;
   padding-right: 17px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .works-container::-webkit-scrollbar {
@@ -151,21 +163,21 @@ body {
 
 
 .contacts-container {
-  display: flex; /* Memastikan tata letak fleksibel */
-  flex-direction: column; /* Elemen ditata vertikal */
-  gap: 10px; /* Jarak antar elemen */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .contacts-container div a {
-  color: black; /* Warna teks hitam */
-  text-decoration: none; /* Menghilangkan garis bawah */
-  font-size: 16px; /* Ukuran font bisa disesuaikan */
-  transition: color 0.3s ease; /* Animasi hover */
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
   font-family: "Old Standard TT", serif;
 }
 
 .contacts-container div a:hover {
-  color: #666; /* Warna teks saat di-hover (opsional) */
+  color: #666;
 }
 
 
@@ -173,5 +185,12 @@ body {
 @media screen and (max-width: 768px) {
   .Nav a {
     font-size: 1rem;
+  }
+  .myname {
+    font-size: 2rem;
+  }
+
+  .works-container {
+    font-size: 0.8rem;
   }
 }
