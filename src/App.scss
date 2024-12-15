@@ -99,9 +99,9 @@ body {
 
 .navLink {
   text-decoration: none;
-  color: black; // or your desired color
+  color: black;
   position: relative;
-  overflow: hidden; // Ensure the underline doesn't overflow
+  overflow: hidden;
   
 
   span {
@@ -109,23 +109,23 @@ body {
     display: inline-block;
 
     &.active {
-      font-weight: bold; // Optional: make it bold
+      font-weight: bold;
     }
 
     &::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: 0; // Position the underline at the bottom of the text
-      height: 2px; // Adjust the thickness of the underline
-      background-color: black; // Change to your desired color
-      width: 0; // Start with width 0
-      transition: width 0.3s ease; // Transition for width change
+      bottom: 0;
+      height: 2px;
+      background-color: black;
+      width: 0;
+      transition: width 0.3s ease;
     }
 
     &.active::after {
-      width: 100%; // Full width when active
-      transition: width 0.3s ease; // Transition for width change
+      width: 100%;
+      transition: width 0.3s ease;
     }
   }
 }
@@ -212,6 +212,35 @@ body {
 .contacts-container div a:hover {
   color: #666;
 }
+
+
+.quote {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+  font-family: "Libre Caslon Display", serif;
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  .quote-number {
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+  }
+
+  div {
+    font-size: 1em;
+    font-style: italic;
+    line-height: 1.6;
+    color: #666;
+  }
+}
+
+
+
 
 
 
