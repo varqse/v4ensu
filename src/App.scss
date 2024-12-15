@@ -6,41 +6,41 @@ body {
   overflow-x: hidden;
 }
 
-.bg {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  width: 200%;
-  height: 200vh;
-  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-  animation: bg-animation .2s infinite;
-  opacity: 0.9;
-  z-index: -1;
-}
+// .bg {
+//   position: fixed;
+//   top: -50%;
+//   left: -50%;
+//   right: -50%;
+//   bottom: -50%;
+//   width: 200%;
+//   height: 200vh;
+//   background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+//   animation: bg-animation .2s infinite;
+//   opacity: 0.9;
+//   z-index: -1;
+// }
 
-@keyframes bg-animation {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -5%); }
-  20% { transform: translate(-10%, 5%); }
-  30% { transform: translate(5%, -10%); }
-  40% { transform: translate(-5%, 15%); }
-  50% { transform: translate(-10%, 5%); }
-  60% { transform: translate(15%, 0); }
-  70% { transform: translate(0, 10%); }
-  80% { transform: translate(-15%, 0); }
-  90% { transform: translate(10%, 5%); }
-  100% { transform: translate(5%, 0); }
-}
+// @keyframes bg-animation {
+//   0% { transform: translate(0, 0); }
+//   10% { transform: translate(-5%, -5%); }
+//   20% { transform: translate(-10%, 5%); }
+//   30% { transform: translate(5%, -10%); }
+//   40% { transform: translate(-5%, 15%); }
+//   50% { transform: translate(-10%, 5%); }
+//   60% { transform: translate(15%, 0); }
+//   70% { transform: translate(0, 10%); }
+//   80% { transform: translate(-15%, 0); }
+//   90% { transform: translate(10%, 5%); }
+//   100% { transform: translate(5%, 0); }
+// }
 
 .MainContainer {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  // border: 1px solid #fff;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid black;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -95,6 +95,39 @@ body {
 
 .Nav span {
   pointer-events: all;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black; // or your desired color
+  position: relative;
+  overflow: hidden; // Ensure the underline doesn't overflow
+  
+
+  span {
+    position: relative;
+    display: inline-block;
+
+    &.active {
+      font-weight: bold; // Optional: make it bold
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0; // Position the underline at the bottom of the text
+      height: 2px; // Adjust the thickness of the underline
+      background-color: black; // Change to your desired color
+      width: 0; // Start with width 0
+      transition: width 0.3s ease; // Transition for width change
+    }
+
+    &.active::after {
+      width: 100%; // Full width when active
+      transition: width 0.3s ease; // Transition for width change
+    }
+  }
 }
 
 .content {

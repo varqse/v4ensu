@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/Home";
 import Works from "./components/Works";
@@ -6,20 +7,7 @@ import Contacts from "./components/Contacts";
 import gsap from "gsap";
 
 function App() {
-  const [activeMenu, setActiveMenu] = useState("home");
-
-  const renderContent = () => {
-    switch (activeMenu) {
-      case "home":
-        return <Home />;
-      case "works":
-        return <Works />;
-      case "contacts":
-        return <Contacts />;
-      default:
-        return <Home />;
-    }
-  };
+  const location = useLocation();
 
   useEffect(() => {
     gsap.fromTo(
@@ -27,57 +15,44 @@ function App() {
       { opacity: 0 },
       { opacity: 1, duration: 1.2, ease: "power2.inOut" }
     );
-  }, [activeMenu]);
-  
-  const handleMenuClick = (menu) => {
-    setActiveMenu(menu);
-  };
+  }, [location]);
 
   return (
     <>
-    <div className="bg"></div>
-    <div className="MainContainer">
-      <div className="Nav">
-        <div className="myname">Ishvara Pranidhana Lakshmana</div>
-        <a 
-          href="#home"
-          onClick={(e) => { 
-            e.preventDefault(); 
-            handleMenuClick("home"); 
-          }} 
-          className="navLink"
-        >
-          <span>Home</span>
-        </a>
-
-        <a 
-          href="#works"
-          onClick={(e) => { 
-            e.preventDefault(); 
-            handleMenuClick("works"); 
-          }} 
-          className="navLink"
-        >
-          <span>Works</span>
-        </a>
-
-        <a 
-          href="#contacts"
-          onClick={(e) => { 
-            e.preventDefault(); 
-            handleMenuClick("contacts"); 
-          }} 
-          className="navLink"
-        >
-          <span>Contacts</span>
-      </a>
+      <div className="bg"></div>
+      <div className="MainContainer">
+        <div className="Nav">
+          <div className="myname">Ishvara Pranidhana Lakshmana</div>
+          <Link to="/home" className="navLink">
+            <span className={location.pathname === "/home" ? "active" : ""}>Home</span>
+          </Link>
+          <Link to="/works" className="navLink">
+            <span className={location.pathname === "/works" ? "active" : ""}>Works</span>
+          </Link>
+          <Link to="/contacts" className="navLink">
+            <span className={location.pathname === "/contacts" ? "active" : ""}>Contacts</span>
+          </Link>
+        </div>
+        <div className="content">
+          <Routes>
+            <Route path="/home" element={<Home />} />
+            <Route path="/works" element={<Works />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/" element={<Navigate to="/home" replace />} />
+          </Routes>
+        </div>
       </div>
-      <div className="content">{renderContent()}</div>
-    </div>
-  </>
+    </>
   );
 }
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;
+
 
 
