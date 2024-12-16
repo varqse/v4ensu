@@ -25,7 +25,7 @@ function App() {
     if (showTransition) {
       const timer = setTimeout(() => {
         setShowTransition(false);
-      }, 300);
+      }, 600);
       return () => clearTimeout(timer);
     } else {
       gsap.fromTo(
@@ -47,10 +47,10 @@ function App() {
       <div className="bg"></div>
       <div className="MainContainer">
         {showTransition && (
-          <div className="quote">
-            <div className="quote-number">[ {quote.roman} ]</div>
-            <div>{quote.text}</div>
-          </div>
+        <div className="quote">
+        <div className="quote-number error">[ {quote.roman} ]</div>
+        <div className="quote-text info">{quote.text}</div>
+      </div>
         )}
         <div className="Nav">
           <div className="myname">Ishvara Pranidhana Lakshmana</div>
