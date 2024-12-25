@@ -66,8 +66,11 @@ function App() {
         <div className="quote-text info">{quote.text}</div>
       </div>
         )}
+        <div className="variable">
+          <a>Var11able</a>
+        </div>
         <div className="Nav">
-          <div className="myname">Ishvara Pranidhana Lakshmana</div>
+          {/* <div className="myname">Ishvara Pranidhana Lakshmana</div> */}
           <Link
             to="/"
             className="navLink"

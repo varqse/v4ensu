@@ -1,7 +1,7 @@
 import React from "react";
 
 const Info = () => (
-  <div className="aboutme">
+  <div className="infoport">
     <p>
       Built using <a href="https://reactjs.org" style={{ color: "#666", textDecoration: "none", cursor: "pointer", userSelect: "none" }} target="_blank" rel="noopener noreferrer">React JS</a> and 
       <a href="https://greensock.com/gsap/" style={{ color: "#666", textDecoration: "none", cursor: "pointer", userSelect: "none" }} target="_blank" rel="noopener noreferrer"> GSAP</a> for animations, design inspiration from 
