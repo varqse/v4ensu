@@ -67,7 +67,18 @@ function App() {
       </div>
         )}
         <div className="variable">
-          <a>Var11able</a>
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick(quotes[Math.floor(Math.random() * quotes.length)]);
+            }}
+            className="navVariable"
+            role="button"
+            aria-label="Navigate to variable"
+          >
+            Var11able
+          </a>
         </div>
         <div className="Nav">
           {/* <div className="myname">Ishvara Pranidhana Lakshmana</div> */}

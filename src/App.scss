@@ -60,6 +60,9 @@ body {
   font-family: "Old Standard TT", serif;
   outline: none;
   font-weight: bold;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
 }
 
 .Nav {
