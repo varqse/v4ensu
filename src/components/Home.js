@@ -19,6 +19,18 @@ const Home = () => (
         </span>
         <span className="position">Web Developer</span>
       </div>
+      {/* <div className="experience">
+        <span className="year">'26 - '27</span>
+        <span className="company">
+          <a href="https://bakorwilmalang.jatimprov.go.id/" target="_blank" rel="noopener noreferrer">
+            Google
+          </a>
+        </span>
+        <span className="position">Web Developer</span>
+      </div> */}
+      <div className="skills">
+        <p>Skills : HTML5, CSS3, JavaScript, C, PHP, SQL, Laravel, Python</p>
+      </div>
     </div>
   </div>
 );

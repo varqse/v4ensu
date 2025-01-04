@@ -201,25 +201,31 @@ body {
 
 .footer {
   display: flex;
-  justify-content: flex-start; /* Align footer to the left */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: flex-start; /* Align items to the left */
+  gap: 10px; /* Space between each item */
+  font-family: "Libre Caslon Text", serif;
 }
 
 .experience {
-  display: flex;
-  gap: 50px;
-  font-family: "Libre Caslon Text", serif;
+  display: grid;
+  grid-template-columns: 100px 200px 1fr; /* Define column widths */
+  gap: 10px; /* Space between columns */
+  align-items: center; /* Vertically align content in each row */
   font-size: 1rem;
 }
 
-@media screen and (max-width: 468px) {
-  .experience {
-    gap: 20px;
-    font-size: 0.6rem;
-  }
+.skills {
+  margin-top: 10px;
+}
+
+.skills p {
+  margin: 0; /* Remove paragraph margin */
 }
 
 .experience .year,
-.experience .company {
+.experience .company,
+.experience .position {
   white-space: nowrap; /* Prevent text wrapping */
 }
 
@@ -228,6 +234,19 @@ body {
   color: inherit; /* Inherit color from parent */
   white-space: nowrap; /* Prevent text wrapping */
 }
+
+@media screen and (max-width: 468px) {
+  .experience {
+    grid-template-columns: 70px 130px 1fr; /* Adjust column widths for smaller screens */
+    font-size: 0.7rem;
+    gap: 0px;
+  }
+  .footer {
+    gap: 5px; /* Reduce gap between items */
+  }
+}
+
+
 
 .works-container {
   display: flex;
