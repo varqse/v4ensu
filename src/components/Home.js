@@ -29,7 +29,8 @@ const Home = () => (
         <span className="position">Web Developer</span>
       </div> */}
       <div className="skills">
-        <p>Skills : HTML5, CSS3, JavaScript, C, PHP, SQL, Laravel, Python</p>
+        <p className="label">Skills</p>
+        <p className="list">HTML5, CSS3, JavaScript, C, PHP, SQL, Laravel, Python, React.</p>
       </div>
     </div>
   </div>

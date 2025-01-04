@@ -216,12 +216,26 @@ body {
 }
 
 .skills {
-  margin-top: 10px;
+  display: flex;
+  padding-top: 10px;
+  gap: 5px;
+  flex-wrap: wrap; /* Allow content to wrap when there isn't enough space */
+  align-items: center; /* Vertically align items in the same row */
+  font-family: "Libre Caslon Text", serif;
 }
 
-.skills p {
-  margin: 0; /* Remove paragraph margin */
+.skills .label {
+  font-weight: bold;
+  white-space: nowrap; /* Prevent wrapping for the label */
+  margin: 0; /* Remove default paragraph margin */
 }
+
+.skills .list {
+  margin: 0; /* Remove default paragraph margin */
+  text-align: left; /* Align text to the left */
+  word-break: break-word; /* Ensure long lines can wrap properly */
+}
+
 
 .experience .year,
 .experience .company,
