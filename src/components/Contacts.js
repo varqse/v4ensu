@@ -8,6 +8,11 @@ const Contacts = () => (
       </a>
     </div>
     <div>
+      <a href="mailto:ishvara.lakshmana@binus.ac.id" target="_blank" rel="noreferrer">
+        Outlook
+      </a>
+    </div>
+    {/* <div>
       <a href="https://github.com/varqse" target="_blank" rel="noreferrer">
         GitHub
       </a>
@@ -26,7 +31,7 @@ const Contacts = () => (
       <a href="https://www.facebook.com/ishvarqse" target="_blank" rel="noreferrer">
         Facebook
       </a>
-    </div>
+    </div> */}
   </div>
 );
 

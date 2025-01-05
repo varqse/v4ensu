@@ -1,9 +1,20 @@
 import React from "react";
+import { FaGithub, FaInstagram } from "react-icons/fa";
 
 const Home = () => (
   <div className="home-container">
     <div className="middlecontent">
-      <div className="myname">Ishvara Pranidhana Lakshmana</div>
+      <div>
+        <div className="myname">Ishvara Pranidhana Lakshmana</div>
+        <div className="social-icons">
+        <a href="https://github.com/varqse" target="_blank" rel="noopener noreferrer" className="icon">
+          <FaGithub size={30} />
+        </a>
+        <a href="https://www.instagram.com/var11able/" target="_blank" rel="noopener noreferrer" className="icon">
+          <FaInstagram size={30} />
+        </a>
+      </div>
+      </div>
       <p className="aboutme">
         Undergraduate Computer Science student with a strong interest in Web Development, actively seeking for any opportunities to contribute meaningfully while expanding and honing my expertise in the field.
       </p>
