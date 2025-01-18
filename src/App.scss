@@ -3,15 +3,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
+
+
 
 .MainContainer {
   display: flex;
   flex-direction: column;
   // border: 1px solid black;
 
-  height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -112,68 +112,84 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 20px;
-  height: 100vh;
-  overflow: hidden;
+  // padding: 20px;
+
+
   margin-top: 0px;
   position: relative;
 }
 
 .home-container {
-  display: flex;
+
+
+
   flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
+
+}
+
+.home-content {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column; /* Mengatur arah flex menjadi kolom */
+  justify-content: flex-end; /* Mengatur item ke bagian bawah */
+  align-items: flex-start;
+  border-bottom: 3px solid black;
 }
 
 .middlecontent {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-top: 170px;
+  // align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: transparent;
 }
 
 .myname {
+  // font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  // font-family: "Old Standard TT", serif;
+  // font-family: "Roboto", serif;
   font-family: "Playfair Display", serif;
-  font-size: 4rem;
-  text-align: right;
+  font-size: 9rem;
+  text-align: left;
   user-select: none;
-  margin-right: 20px;
-}
-.social-icons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 10px;
-  justify-content: flex-end;
-  margin-right: 20px;
 }
 
-.icon {
-  color: black;
-  transition: color 0.3s;
-}
 
-.icon:hover {
-  color: gray;
+
+.roman-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #555;
+  // align-self: flex-start;
+  align-self: start;
 }
 
 @media screen and (max-width: 968px) {
   .myname {
-    font-size: 2.6rem;
+    font-size: 6rem;
   }
 }
 
 @media screen and (max-width: 468px) {
   .myname {
-    font-size: 2rem;
+    font-size: 3.7rem;
   }
 }
 
+.aboutcontainer {
+  text-align: right;
+}
+
+.abouttitle {
+  font-family: "Playfair Display", serif;
+}
+
 .aboutme {
-  width: 200px;
-  font-family: "Libre Caslon Text", serif;
+  width: 300px;
+  font-family: "Montserrat", serif;
   user-select: none;
+  text-align: right;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 868px) {
@@ -189,65 +205,122 @@ body {
   }
 }
 
-.footer {
-  display: flex;
-  flex-direction: column; /* Arrange items vertically */
-  align-items: flex-start; /* Align items to the left */
-  gap: 10px; /* Space between each item */
-  font-family: "Libre Caslon Text", serif;
+.home-workstitle {
+  font-family: "Playfair Display", serif;
 }
 
-.experience {
+
+
+
+
+
+
+
+
+
+
+
+.home-workstitle {
+  font-size: 32px;
+  margin: 40px 0;
+}
+
+.home-workscards {
   display: grid;
-  grid-template-columns: 100px 200px 1fr; /* Define column widths */
-  gap: 10px; /* Space between columns */
-  align-items: center; /* Vertically align content in each row */
-  font-size: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0px;
 }
 
-.skills {
-  display: flex;
-  padding-top: 10px;
-  gap: 5px;
-  flex-wrap: wrap; /* Allow content to wrap when there isn't enough space */
-  align-items: center; /* Vertically align items in the same row */
-  font-family: "Libre Caslon Text", serif;
-}
+.project-card {
 
-.skills .label {
-  font-weight: bold;
-  white-space: nowrap; /* Prevent wrapping for the label */
-  margin: 0; /* Remove default paragraph margin */
-}
+  border: 1px solid black;
+  // border-radius: 8px;
 
-.skills .list {
-  margin: 0; /* Remove default paragraph margin */
-  text-align: left; /* Align text to the left */
-  word-break: break-word; /* Ensure long lines can wrap properly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-.experience .year,
-.experience .company,
-.experience .position {
-  white-space: nowrap; /* Prevent text wrapping */
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.experience .company a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
-  white-space: nowrap; /* Prevent text wrapping */
+.project-image {
+  width: 100%;
+  height: 200px;
+  // object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 468px) {
-  .experience {
-    grid-template-columns: 70px 130px 1fr; /* Adjust column widths for smaller screens */
-    font-size: 0.7rem;
-    gap: 0px;
+.project-card:hover .project-image {
+  filter: grayscale(0);
+}
+
+.project-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.project-stacks {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.project-title {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+
+
+  .home-workstitle {
+    font-size: 28px;
+    
   }
-  .footer {
-    gap: 5px; /* Reduce gap between items */
+}
+
+@media (max-width: 600px) {
+  .home-workscards {
+    grid-template-columns: 1fr; /* Satu kolom */
   }
+}
+
+@media (max-width: 480px) {
+
+  .project-info {
+    padding: 10px;
+    
+  }
+}
+
+.home-workscontainer{
+  padding-bottom: 50px;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  border-top: 3px solid black;
+}
+
+.footer a {
+  color: #777;;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 
@@ -331,7 +404,6 @@ body {
   font-family: "Libre Caslon Text", serif;
   user-select: none;
 }
-
 
 .quote {
   position: fixed;
